@@ -2,28 +2,13 @@ import React,{useState,useEffect} from 'react'
 import "./search.scss"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
-// import { Iflight } from "../types/Types"
+import { Iflight } from "../../types/types"
 
-interface Iflight {
-  flight_id: String;
-  depatureDestination: string;
-  arrivalDestination: string;
-  itineraries: {
-    depatureAt:string;
-    arriveAt:string;
-    avaliableSeats:number;
-    prices:{
-      currency:string;
-      adult:number;
-      child:number
-    }[]
-  }[]
 
-};
 
-interface Ideparture {
-   depatureDestination: string;
-}
+// interface Ideparture {
+//    depatureDestination: string;
+// }
 
 function Search ()  {
   const [flights, setFlights] = useState<Iflight[]>([])
@@ -115,14 +100,21 @@ function Search ()  {
                      />
                 </div>
 
-                 <div className='search-date--departure'>
-                    <label>Passenger</label>
-                    <input type="text"/>
+                 <div className='search-date--passenger'>
+                    <div>
+                    <label>Passenger ( Adults )</label>
+                    <input type="number" placeholder='0'/>
+                    </div>
+                    <div>
+                    <label>Passenger ( Children )</label>
+                    <input type="number" placeholder='0'/>
+
+                    </div>
                 </div>
 
             </div>
             <div className='search-button'>
-                <button>Search</button>
+                <button>Search flights</button>
 
             </div>
 
