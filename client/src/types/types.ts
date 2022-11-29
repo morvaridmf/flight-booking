@@ -1,16 +1,34 @@
 export interface Iflight {
-  flight_id: String;
+  flight_id: string;
   depatureDestination: string;
   arrivalDestination: string;
-  itineraries: {
-    depatureAt:string;
-    arriveAt:string;
-    avaliableSeats:number;
-    prices:{
-      currency:string;
-      adult:number;
-      child:number
-    }[]
-  }[]
-
+  itineraries: IItinerariesEntity;
 }
+export interface IItinerariesEntity {
+  depatureAt: string;
+  arriveAt: string;
+  avaliableSeats: number;
+  prices: IPricesEntity;
+}
+export interface IPricesEntity {
+  currency: string;
+  adult: number;
+  child: number;
+}
+
+
+
+export interface INewFlight {
+  flight_id: string;
+  trip:string;
+  depatureDestination: string;
+  arrivalDestination: string;
+  itineraries: INewItinerariesEntity;
+}
+export interface INewItinerariesEntity {
+  depatureAt: string;
+  arriveAt: string;
+  passengerAdult:number;
+  passengerChild:number
+}
+
