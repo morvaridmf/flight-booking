@@ -1,14 +1,14 @@
-export interface Iflight {
+export interface IFlight {
   flight_id: string;
   depatureDestination: string;
   arrivalDestination: string;
-  itineraries: IItinerariesEntity;
+  itineraries: IItinerariesEntity[];
 }
 export interface IItinerariesEntity {
   depatureAt: string;
   arriveAt: string;
   avaliableSeats: number;
-  prices: IPricesEntity;
+  prices: IPricesEntity[];
 }
 export interface IPricesEntity {
   currency: string;

@@ -1,9 +1,15 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import "./search.scss"
-// import DatePicker from "react-datepicker"
-import "react-datepicker/dist/react-datepicker.css"
-// import { Iflight } from "../../types/types"
 import { INewFlight } from "../../types/types"
+import { useNavigate } from "react-router-dom";
+// import "react-datepicker/dist/react-datepicker.css"
+// import { Iflight } from "../../types/types"
+// import useFetch from '../../hooks/useFetch'
+// import DatePicker from "react-datepicker"
+
+
+
+
 
 
 
@@ -11,8 +17,10 @@ import { INewFlight } from "../../types/types"
 
 function Search () {
 
-//  const [flights, setFlights] = useState<Iflight[]>([])
- const [addFlight, setAddFlight ] = useState<INewFlight>({} as INewFlight)
+    const navigate = useNavigate();
+    const [addFlight, setAddFlight ] = useState<INewFlight>({} as INewFlight)
+    //  const [flights, setFlights] = useState<Iflight[]>([])
+//  const {error, loading, data, reFetch} = useFetch()
 //  const [passengerAdult, setpassengerAdult ] = useState("")
 //  const [passengerChild, setpassengerChild] = useState("")
 //  const [passengers, setpassengers] = useState(0)
@@ -39,24 +47,35 @@ function Search () {
       [e.target.name]: e.target.value
     });
     //  addPassenger()
-
-    //  console.log(addFlight)
-
   }
+  
+  const SelectHandleChange = (e: React.FormEvent<HTMLSelectElement>) =>{
+       setAddFlight({
+        ...addFlight,
+        [e.currentTarget.name]: e.currentTarget.value
+      });
+  }
+
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     console.log(addFlight)
     //    addPassenger()
 
+       const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(addFlight)
+      }
+
+    fetch("http://localhost:5000/flight", requestOptions)
+    .then(res => res.json())
+    .then(data => console.log("1",data))
+
+    navigate("/flight")
   } 
 
-const SelectHandleChange = (e: React.FormEvent<HTMLSelectElement>) =>{
-     setAddFlight({
-      ...addFlight,
-      [e.currentTarget.name]: e.currentTarget.value
-    });
-}
 
   return (
     <div className='search'>

@@ -14,9 +14,9 @@ const flightData: {
     }[]
   }[]
 
-}[] =
-[
-    {
+}[] = [
+
+   {
         "flight_id": "S83195",
         "depatureDestination": "Stockholm",
         "arrivalDestination": "Oslo",
@@ -692,8 +692,8 @@ const flightData: {
             }
         ]
     }
-]
+
+  ]
 
 export default flightData;
-
 
