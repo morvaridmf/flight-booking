@@ -39,7 +39,7 @@ useEffect(() =>{
     {loading ? (<h1>Loading...</h1>) : (
       <div className="flight-body">
         <nav>
-          <Link to="/" >  
+          <Link to="/" className="link" >  
               <h3>Home</h3>
            </Link>
         </nav>

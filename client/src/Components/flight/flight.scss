@@ -81,6 +81,14 @@
                             flex-direction: row;
                             justify-content: space-between;
 
+                            // .show {
+                            //     height: 150px;
+                            // }
+                            .moreInfo {
+                                visibility: hidden;
+                                // background-color: $background;
+                            }
+
                             span {
                                 font-weight: bold;
                             }
@@ -107,12 +115,13 @@
                                 }
 
                                 .btn-detail {
-                                    background-color: $dark;
+                                    background-color: $yellow;
                                     padding: 5px 10px;
                                     border-radius: 5px;
-                                    color: $background;
-                                    border: none;
+                                    color: $dark;
+                                    // border: none;
                                     cursor: pointer;
+                                    border: 1px solid $yellow;
                                 }
                             }
 

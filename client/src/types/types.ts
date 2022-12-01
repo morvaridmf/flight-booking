@@ -8,6 +8,7 @@ export interface IItinerariesEntity {
   depatureAt: string;
   arriveAt: string;
   avaliableSeats: number;
+  id: number;
   prices: IPricesEntity[];
 }
 export interface IPricesEntity {
@@ -20,7 +21,7 @@ export interface IPricesEntity {
 
 export interface INewFlight {
   flight_id: string;
-  trip:string;
+  trip: string;
   depatureDestination: string;
   arrivalDestination: string;
   itineraries: INewItinerariesEntity;
@@ -28,7 +29,16 @@ export interface INewFlight {
 export interface INewItinerariesEntity {
   depatureAt: string;
   arriveAt: string;
-  passengerAdult:number;
-  passengerChild:number
+  passengerAdult: number;
+  passengerChild: number
 }
 
+
+export interface IPassengerInfo {
+  firstName: string;
+  lastName: string;
+  title: string;
+  birthDate: string;
+  phoneNumber: number;
+  email: string
+}
