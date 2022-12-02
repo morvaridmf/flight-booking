@@ -33,7 +33,7 @@
             label {
                 display: block;
                 margin-bottom: 7px;
-                color: $dark-gray;
+                color: $dark;
                 font-size: small;
             }
 
@@ -43,17 +43,18 @@
                 border: none;
                 background-color: transparent;
                 border-bottom: 1px solid $purple;
-                color: $dark;
+                color: $dark-gray;
                 // box-shadow: 1px 2px 10px -2px rgba(0,0,0,0.3);
                 overflow: hidden;
-                font-size: 15px;
+                font-size: 12px;
+
 
 
                 option {
                     color: $dark;
                     margin-top: 10px;
                     cursor: pointer;
-                    font-size: 15px
+                    font-size: 14px
                 }
 
 
@@ -70,12 +71,12 @@
             label {
                 display: block;
                 margin-bottom: 7px;
-                color: $dark-gray;
+                color: $dark;
                 font-size: small;
             }
 
             input {
-                width: 220px;
+                width: 180px;
                 padding: 10px;
                 border: none;
                 // border-radius: 5px;
@@ -95,15 +96,28 @@
                 label {
                     display: block;
                     margin-bottom: 7px;
-                    color: $dark-gray;
+                    color: $dark;
                     font-size: small;
                     margin-left: 40px;
 
                 }
 
                 input {
-                    width: 120px;
+                    width: 100px;
                     margin-left: 40px;
+                }
+
+                .search-date-btn {
+                    background-color: $purple;
+                    // width: 35px;
+                    height: 22px;
+                    margin-left: 30px;
+                    // margin-right: 10px;
+                    border-radius: 50%;
+                    margin-top: 30px;
+                    font-size: large;
+                    border: none;
+                    cursor: pointer;
                 }
             }
 
