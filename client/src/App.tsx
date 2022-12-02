@@ -13,33 +13,33 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
-  
+
   const [flights, setFlights] = useState<IFlight[]>([])
 
   useEffect(() => {
-     const fetching = async () =>{
-         const response = await fetch ("http://localhost:5000/flight")
-         const data = await response.json()
-         // console.log(data)
-          setFlights(data)
-     }
-     fetching();
-   }, [])
-  
+    const fetching = async () => {
+      const response = await fetch("http://localhost:5000/flight")
+      const data = await response.json()
+      // console.log(data)
+      setFlights(data)
+    }
+    fetching();
+  }, [])
+
   return (
-        <BrowserRouter>
+    <BrowserRouter>
 
       <Routes>
-       <Route path="/" element={<Search />} />
-       <Route path="flight" element={<Flight />} />
-       <Route path="passenger" element={<Passenger />} />
-       <Route path="info" element={<Info />} />
+        <Route path="/" element={<Search />} />
+        <Route path="flight" element={<Flight />} />
+        <Route path="passenger" element={<Passenger />} />
+        <Route path="info" element={<Info />} />
 
-    </Routes>
-        </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
 
-      
-    
+
+
   );
 }
 

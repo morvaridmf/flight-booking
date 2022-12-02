@@ -42,3 +42,26 @@ export interface IPassengerInfo {
   phoneNumber: number;
   email: string
 }
+
+export interface ISearch {
+  depatureAt: string;
+  arriveAt: string;
+  avaliableSeats: number;
+  id: number;
+  prices: any[]
+}
+
+export interface ICombinedInfo {
+  firstName: string;
+  lastName: string;
+  title: string;
+  birthDate: string;
+  phoneNumber: number;
+  email: string;
+  depatureAt: string;
+  arriveAt: string;
+  avaliableSeats: number;
+  depatureDestination: string;
+  arrivalDestination: string
+
+}
