@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { IFlight } from '../../types/types';
 import "./info.scss"
 import { ICombinedInfo } from "../../types/types"
 
@@ -18,7 +17,7 @@ function Info() {
       try {
         const res = await fetch("http://localhost:5000/passenger/search");
         const data = await res.json();
-        console.log("dataaa4", data[0].arrivalDestination);
+        // console.log("dataaa4", data[0].arrivalDestination);
         setPassengerData(data);
 
         fetch(`https://api.unsplash.com/search/photos/?client_id=7GVbwjCVwcBApOWfILqwgkXLkHGBFjZ2QeagBZKy03A&query=${data[0].arrivalDestination}`)
@@ -64,16 +63,15 @@ function Info() {
                   <img src={arrivalImage} />
                 </div>
                 <div className='info-text'>
-                  <h3> {p.depatureDestination} To  {p.arrivalDestination}</h3>
+                  <h2> {p.depatureDestination} To  {p.arrivalDestination}</h2>
                   <h4>Departure at: {p.depatureAt}  - Arrive at: {p.arriveAt}</h4>
-                  <h4> {p.title}, {p.firstName} {p.lastName}</h4>
+                  <h4> {p.title}. {p.firstName} {p.lastName}</h4>
                   <p>Email: {p.email}</p>
                   <p>Phone: {p.phoneNumber}</p>
                   <p>Date of birth: {p.birthDate}</p>
                 </div>
 
 
-                <button>Submit</button>
               </div>
             ))
             }

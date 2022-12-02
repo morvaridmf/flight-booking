@@ -26,7 +26,7 @@ function Passenger() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(passengerInfo)
+    // console.log(passengerInfo)
 
     const requestOptions = {
       method: 'POST',

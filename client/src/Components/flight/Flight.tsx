@@ -18,7 +18,7 @@ function Flight() {
       try {
         const res = await fetch("http://localhost:5000/flight/search");
         const data = await res.json();
-        console.log("dataaa1", data);
+        // console.log("dataaa1", data);
         setFlightsData(data);
 
 

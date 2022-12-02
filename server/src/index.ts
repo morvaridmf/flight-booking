@@ -27,48 +27,38 @@ let passengerInfo: any = []
 
 
 
-// -----------------search new flight-----------------------
+// -----------------save search new flight-----------------------
 
 app.post('/flight', (req: Request, res: Response) => {
     let newFlight = req.body;
-    console.log("ff", newFlight)
     return SearchFlight.unshift(newFlight)
-    //   return res.status(200).json(flightData);
 });
 
-// ----------------- selected flight-----------------------
+// ----------------- save selected flight-----------------------
 
 app.post('/flights', (req: Request, res: Response) => {
     let newSelectedFlight = req.body;
-    console.log("cc", newSelectedFlight)
     return SearchSelectedFlight.unshift(newSelectedFlight)
-    //   return res.status(200).json(flightData);
 });
 
 
-// -----------------get passenger data-----------------------
+// -----------------save passenger data-----------------------
 
 app.post('/passenger', (req: Request, res: Response) => {
     let newPssenger = req.body;
-    console.log("pp", newPssenger)
     return passengerInfo.unshift(newPssenger)
-    //    return res.status(200).json(flightData);
 });
 
 
 
 
 
-
-
-
-// --------------find flight base on search------------------
+// --------------get flight base on search------------------
 
 app.get('/flight/search', (req: Request, res: Response) => {
     setTimeout(() => {
 
         const data = SearchFlight[0]
-        console.log("llll", data)
         const { arrivalDestination, arriveAt, depatureAt, depatureDestination }: any = data
         const searchData = flightData.filter((flight, index) =>
 
@@ -87,7 +77,7 @@ app.get('/flight/search', (req: Request, res: Response) => {
 });
 
 
-// --------------find flight base on search------------------
+// --------------get all the saved infos------------------
 
 app.get('/passenger/search', (req: Request, res: Response) => {
 
@@ -97,13 +87,8 @@ app.get('/passenger/search', (req: Request, res: Response) => {
         const flightDetail = SearchSelectedFlight[0]
         const search = SearchFlight[0]
         let combinedInfo: any[] = []
-        // const mori = combinedInfo.concat(passenger, flightDetail, search)
-        const mori = Object.assign(passenger, flightDetail, search)
-        combinedInfo.push(mori)
-
-        console.log("tttt", flightDetail)
-        console.log("eeee", search)
-        console.log("hhhhh", combinedInfo)
+        const dataObject = Object.assign(passenger, flightDetail, search)
+        combinedInfo.push(dataObject)
 
 
         return res.status(200).json(combinedInfo);

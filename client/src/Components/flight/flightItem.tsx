@@ -1,11 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { IFlight } from "../../types/types"
 import { ISearch } from "../../types/types"
-
-
-
 
 
 
@@ -22,7 +17,7 @@ function FlightItem(i: ISearch) {
   const handleClick1 = (id: number) => {
     if (i.id === id) {
       const newDetails: any = { depatureAt, arriveAt, avaliableSeats, prices }
-      console.log("qqq", newDetails)
+      // console.log("qqq", newDetails)
       setSelectedFlight(newDetails)
     }
 
@@ -48,8 +43,6 @@ function FlightItem(i: ISearch) {
 
 
     navigate("/passenger ")
-
-
 
   }
 
